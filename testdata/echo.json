@@ -1,0 +1,4223 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Apifox Echo",
+    "description": "简单的接口请求和返回数据服务，供开发人员和测试人员学习测试 API 使用。",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "HTTP 方法"
+    },
+    {
+      "name": "HTTP 状态码"
+    },
+    {
+      "name": "任意内容"
+    },
+    {
+      "name": "动态内容"
+    },
+    {
+      "name": "返回格式"
+    },
+    {
+      "name": "检查 Response 信息"
+    },
+    {
+      "name": "检查 Request 信息"
+    },
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "图片"
+    },
+    {
+      "name": "Cookies"
+    },
+    {
+      "name": "重定向"
+    }
+  ],
+  "paths": {
+    "/get": {
+      "get": {
+        "summary": "使用 Query 参数",
+        "x-apifox-folder": "HTTP 方法",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "可在请求时任意添加 Query 参数，服务端会将所有的参数原样返回",
+        "tags": [
+          "HTTP 方法"
+        ],
+        "parameters": [
+          {
+            "name": "q1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q2",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v2",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "args": {
+                      "type": "object",
+                      "properties": {
+                        "q1": {
+                          "type": "string"
+                        },
+                        "q2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "q1",
+                        "q2"
+                      ],
+                      "x-apifox-orders": [
+                        "q1",
+                        "q2"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Accept": {
+                          "type": "string"
+                        },
+                        "Accept-Encoding": {
+                          "type": "string"
+                        },
+                        "Connection": {
+                          "type": "string"
+                        },
+                        "Host": {
+                          "type": "string"
+                        },
+                        "User-Agent": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-orders": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "origin": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "headers",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-orders": [
+                    "args",
+                    "headers",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132017-run"
+      }
+    },
+    "/post": {
+      "post": {
+        "summary": "使用 POST 参数",
+        "x-apifox-folder": "HTTP 方法",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "可在请求时任意添加 Body 或 Query 参数，服务端会将所有的参数原样返回",
+        "tags": [
+          "HTTP 方法"
+        ],
+        "parameters": [
+          {
+            "name": "q1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q2",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v2",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "d": {
+                    "type": "string"
+                  },
+                  "dd": {
+                    "type": "string"
+                  }
+                },
+                "x-apifox-orders": [
+                  "d",
+                  "dd"
+                ],
+                "required": [
+                  "d",
+                  "dd"
+                ],
+                "x-apifox-ignore-properties": []
+              },
+              "example": {
+                "d": "deserunt",
+                "dd": "adipisicing enim deserunt Duis"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "args": {
+                      "type": "object",
+                      "properties": {
+                        "q1": {
+                          "type": "string"
+                        },
+                        "q2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "q1",
+                        "q2"
+                      ],
+                      "x-apifox-orders": [
+                        "q1",
+                        "q2"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "files": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "form": {
+                      "type": "object",
+                      "properties": {
+                        "b1": {
+                          "type": "string"
+                        },
+                        "b2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-orders": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Accept": {
+                          "type": "string"
+                        },
+                        "Accept-Encoding": {
+                          "type": "string"
+                        },
+                        "Connection": {
+                          "type": "string"
+                        },
+                        "Content-Length": {
+                          "type": "string"
+                        },
+                        "Content-Type": {
+                          "type": "string"
+                        },
+                        "Host": {
+                          "type": "string"
+                        },
+                        "User-Agent": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-orders": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "json": {
+                      "type": "null"
+                    },
+                    "origin": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-orders": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "args": {
+                        "q1": "v1",
+                        "q2": "v2"
+                      },
+                      "data": "",
+                      "files": {},
+                      "form": {
+                        "b1": "v1",
+                        "b2": "v2"
+                      },
+                      "headers": {
+                        "Accept": "*/*",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Connection": "close",
+                        "Content-Length": "262",
+                        "Content-Type": "multipart/form-data; boundary=--------------------------497528158241070250470018",
+                        "Host": "httpbin.apifox.com",
+                        "User-Agent": "apifox/1.0.0 (https://www.apifox.cn)"
+                      },
+                      "json": null,
+                      "origin": "116.23.126.194",
+                      "url": "https://httpbin.apifox.com/post?q1=v1&q2=v2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132018-run"
+      }
+    },
+    "/delete": {
+      "delete": {
+        "summary": "使用 DELETE 参数",
+        "x-apifox-folder": "HTTP 方法",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 方法"
+        ],
+        "parameters": [
+          {
+            "name": "q1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "b1": {
+                    "type": "string",
+                    "example": "v1"
+                  },
+                  "b2": {
+                    "type": "string",
+                    "example": "v2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "args": {
+                      "type": "object",
+                      "properties": {
+                        "q1": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "q1"
+                      ],
+                      "x-apifox-orders": [
+                        "q1"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "files": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "form": {
+                      "type": "object",
+                      "properties": {
+                        "b1": {
+                          "type": "string"
+                        },
+                        "b2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-orders": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Accept": {
+                          "type": "string"
+                        },
+                        "Accept-Encoding": {
+                          "type": "string"
+                        },
+                        "Connection": {
+                          "type": "string"
+                        },
+                        "Content-Length": {
+                          "type": "string"
+                        },
+                        "Content-Type": {
+                          "type": "string"
+                        },
+                        "Host": {
+                          "type": "string"
+                        },
+                        "User-Agent": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-orders": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "json": {
+                      "type": "null"
+                    },
+                    "origin": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-orders": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "args": {
+                        "q1": "v1"
+                      },
+                      "data": "",
+                      "files": {},
+                      "form": {
+                        "b1": "v1",
+                        "b2": "v2"
+                      },
+                      "headers": {
+                        "Accept": "*/*",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Connection": "close",
+                        "Content-Length": "262",
+                        "Content-Type": "multipart/form-data; boundary=--------------------------519039062991114527357557",
+                        "Host": "httpbin.apifox.com",
+                        "User-Agent": "apifox/1.0.0 (https://www.apifox.cn)"
+                      },
+                      "json": null,
+                      "origin": "116.23.126.194",
+                      "url": "https://httpbin.apifox.com/delete?q1=v1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132019-run"
+      }
+    },
+    "/patch": {
+      "patch": {
+        "summary": "使用 PATCH 参数",
+        "x-apifox-folder": "HTTP 方法",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 方法"
+        ],
+        "parameters": [
+          {
+            "name": "q1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "b1": {
+                    "type": "string"
+                  },
+                  "b2": {
+                    "type": "string"
+                  }
+                },
+                "x-apifox-orders": [
+                  "b1",
+                  "b2"
+                ],
+                "required": [
+                  "b1",
+                  "b2"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "args": {
+                      "type": "object",
+                      "properties": {
+                        "q1": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "q1"
+                      ],
+                      "x-apifox-orders": [
+                        "q1"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "files": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "form": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Accept": {
+                          "type": "string"
+                        },
+                        "Accept-Encoding": {
+                          "type": "string"
+                        },
+                        "Connection": {
+                          "type": "string"
+                        },
+                        "Content-Length": {
+                          "type": "string"
+                        },
+                        "Content-Type": {
+                          "type": "string"
+                        },
+                        "Host": {
+                          "type": "string"
+                        },
+                        "User-Agent": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-orders": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "json": {
+                      "type": "object",
+                      "properties": {
+                        "b1": {
+                          "type": "string"
+                        },
+                        "b2": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-orders": [
+                        "b1",
+                        "b2"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "origin": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-orders": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "args": {
+                        "q1": "v1"
+                      },
+                      "data": "{\n    \"b1\": \"culpa id laboris nisi reprehenderit\",\n    \"b2\": \"adipisicing irure reprehenderit sed\"\n}",
+                      "files": {},
+                      "form": {},
+                      "headers": {
+                        "Accept": "*/*",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Connection": "close",
+                        "Content-Length": "100",
+                        "Content-Type": "application/json",
+                        "Host": "httpbin.apifox.com",
+                        "User-Agent": "apifox/1.0.0 (https://www.apifox.cn)"
+                      },
+                      "json": {
+                        "b1": "culpa id laboris nisi reprehenderit",
+                        "b2": "adipisicing irure reprehenderit sed"
+                      },
+                      "origin": "116.23.126.194",
+                      "url": "https://httpbin.apifox.com/patch?q1=v1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132020-run"
+      }
+    },
+    "/put": {
+      "put": {
+        "summary": "使用 PUT 参数",
+        "x-apifox-folder": "HTTP 方法",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 方法"
+        ],
+        "parameters": [
+          {
+            "name": "q1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "test value"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "args": {
+                      "type": "object",
+                      "properties": {
+                        "q1": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "q1"
+                      ],
+                      "x-apifox-orders": [
+                        "q1"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "files": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "form": {
+                      "type": "object",
+                      "properties": {},
+                      "x-apifox-orders": [],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "Accept": {
+                          "type": "string"
+                        },
+                        "Accept-Encoding": {
+                          "type": "string"
+                        },
+                        "Connection": {
+                          "type": "string"
+                        },
+                        "Content-Length": {
+                          "type": "string"
+                        },
+                        "Content-Type": {
+                          "type": "string"
+                        },
+                        "Host": {
+                          "type": "string"
+                        },
+                        "User-Agent": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-orders": [
+                        "Accept",
+                        "Accept-Encoding",
+                        "Connection",
+                        "Content-Length",
+                        "Content-Type",
+                        "Host",
+                        "User-Agent"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "json": {
+                      "type": "null"
+                    },
+                    "origin": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-orders": [
+                    "args",
+                    "data",
+                    "files",
+                    "form",
+                    "headers",
+                    "json",
+                    "origin",
+                    "url"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "args": {
+                        "q1": "v1"
+                      },
+                      "data": "test value",
+                      "files": {},
+                      "form": {},
+                      "headers": {
+                        "Accept": "*/*",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Connection": "close",
+                        "Content-Length": "10",
+                        "Content-Type": "text/plain",
+                        "Host": "httpbin.apifox.com",
+                        "User-Agent": "apifox/1.0.0 (https://www.apifox.cn)"
+                      },
+                      "json": null,
+                      "origin": "116.23.126.194",
+                      "url": "https://httpbin.apifox.com/put?q1=v1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132021-run"
+      }
+    },
+    "/status/{codes}": {
+      "delete": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132022-run"
+      },
+      "get": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132023-run"
+      },
+      "patch": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132024-run"
+      },
+      "post": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132025-run"
+      },
+      "put": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132026-run"
+      },
+      "trace": {
+        "summary": "返回指定的状态码（可指定多个随机返回）",
+        "x-apifox-folder": "HTTP 状态码",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "HTTP 状态码"
+        ],
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "description": "HTTP状态码，多个状态码使用英文逗号分隔",
+            "required": true,
+            "example": "200,404",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informational responses",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Redirection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Client Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Errors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "x-200:Success": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132027-run"
+      }
+    },
+    "/anything": {
+      "delete": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132028-run"
+      },
+      "get": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132029-run"
+      },
+      "patch": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132030-run"
+      },
+      "post": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132031-run"
+      },
+      "put": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132032-run"
+      },
+      "trace": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132033-run"
+      }
+    },
+    "/anything/{anything}": {
+      "delete": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132034-run"
+      },
+      "get": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132035-run"
+      },
+      "patch": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132036-run"
+      },
+      "post": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132037-run"
+      },
+      "put": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132038-run"
+      },
+      "trace": {
+        "summary": "返回所有Request的内容",
+        "x-apifox-folder": "任意内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "任意内容"
+        ],
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Anything passed in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132039-run"
+      }
+    },
+    "/base64/{value}": {
+      "get": {
+        "summary": "解码 base64url-encoded 字符串",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "56S65L6L5YC8",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Decoded base64 content.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132040-run"
+      }
+    },
+    "/bytes/{n}": {
+      "get": {
+        "summary": "返回 n 个随机 bytes",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "10",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bytes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132041-run"
+      }
+    },
+    "/delay/{delay}": {
+      "delete": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "延迟时长，单位：秒",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132042-run"
+      },
+      "get": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132043-run"
+      },
+      "patch": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132044-run"
+      },
+      "post": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "5",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132045-run"
+      },
+      "put": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132046-run"
+      },
+      "trace": {
+        "summary": "延迟返回",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A delayed response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132047-run"
+      }
+    },
+    "/drip": {
+      "get": {
+        "summary": "Drips data over a duration after an optional initial delay.",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "duration",
+            "in": "query",
+            "description": "The amount of time (in seconds) over which to drip each byte",
+            "required": false,
+            "example": "1",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "numbytes",
+            "in": "query",
+            "description": "The number of bytes to respond with",
+            "required": false,
+            "example": "50",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "The response code that will be returned",
+            "required": false,
+            "example": "402",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "delay",
+            "in": "query",
+            "description": "The amount of time (in seconds) to delay before responding",
+            "required": false,
+            "example": "1",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A dripped response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132048-run"
+      }
+    },
+    "/links/{n}/{offset}": {
+      "get": {
+        "summary": "生成包含分页码的数据",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "10",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTML links.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132049-run"
+      }
+    },
+    "/range/{numbytes}": {
+      "get": {
+        "summary": "Streams 方式返回 n 个字节",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "numbytes",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "10",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bytes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132050-run"
+      }
+    },
+    "/stream-bytes/{n}": {
+      "get": {
+        "summary": "Stream 方式返回 n 个字节",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bytes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132051-run"
+      }
+    },
+    "/stream/{n}": {
+      "get": {
+        "summary": "Stream 方式返回 n 个 JSON",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "10",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Streamed JSON responses.",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132052-run"
+      }
+    },
+    "/uuid": {
+      "get": {
+        "summary": "返回一个 UUID4",
+        "x-apifox-folder": "动态内容",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "动态内容"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A UUID4.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132053-run"
+      }
+    },
+    "/brotli": {
+      "get": {
+        "summary": "返回 Brotli-encoded 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Brotli-encoded data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132054-run"
+      }
+    },
+    "/deflate": {
+      "get": {
+        "summary": "返回 Deflate-encoded 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Defalte-encoded data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132055-run"
+      }
+    },
+    "/deny": {
+      "get": {
+        "summary": "Returns page denied by robots.txt rules.",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Denied message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132056-run"
+      }
+    },
+    "/encoding/utf8": {
+      "get": {
+        "summary": "返回  UTF-8 encoded body",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Encoded UTF-8 content.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132057-run"
+      }
+    },
+    "/gzip": {
+      "get": {
+        "summary": "返回 GZip-encoded 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "GZip-encoded data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132058-run"
+      }
+    },
+    "/html": {
+      "get": {
+        "summary": "返回简单的 HTML 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "An HTML page.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132059-run"
+      }
+    },
+    "/json": {
+      "get": {
+        "summary": "返回简单的 JSON 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "An JSON document.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132060-run"
+      }
+    },
+    "/robots.txt": {
+      "get": {
+        "summary": "返回 robots.txt rules",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Robots file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132061-run"
+      }
+    },
+    "/xml": {
+      "get": {
+        "summary": "返回简单的 XML 数据",
+        "x-apifox-folder": "返回格式",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "返回格式"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "An XML document.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132062-run"
+      }
+    },
+    "/cache": {
+      "get": {
+        "summary": "Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise.",
+        "x-apifox-folder": "检查 Response 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Response 信息"
+        ],
+        "parameters": [
+          {
+            "name": "If-Modified-Since",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cached response",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Modified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132063-run"
+      }
+    },
+    "/cache/{value}": {
+      "get": {
+        "summary": "Sets a Cache-Control header for n seconds.",
+        "x-apifox-folder": "检查 Response 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Response 信息"
+        ],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cache control set",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132064-run"
+      }
+    },
+    "/etag/{etag}": {
+      "get": {
+        "summary": "Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately.",
+        "x-apifox-folder": "检查 Response 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Response 信息"
+        ],
+        "parameters": [
+          {
+            "name": "etag",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Normal response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "match",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132065-run"
+      }
+    },
+    "/response-headers": {
+      "get": {
+        "summary": "Returns a set of response headers from the query string.",
+        "x-apifox-folder": "检查 Response 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Response 信息"
+        ],
+        "parameters": [
+          {
+            "name": "freeform",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response headers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132066-run"
+      },
+      "post": {
+        "summary": "Returns a set of response headers from the query string.",
+        "x-apifox-folder": "检查 Response 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Response 信息"
+        ],
+        "parameters": [
+          {
+            "name": "freeform",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response headers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132067-run"
+      }
+    },
+    "/headers": {
+      "get": {
+        "summary": "返回 Request HTTP header",
+        "x-apifox-folder": "检查 Request 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Request 信息"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The request's headers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132068-run"
+      }
+    },
+    "/ip": {
+      "get": {
+        "summary": "返回请求的 IP 地址",
+        "x-apifox-folder": "检查 Request 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Request 信息"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Requester's IP Address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132069-run"
+      }
+    },
+    "/user-agent": {
+      "get": {
+        "summary": "返回请求的 User-Agent header",
+        "x-apifox-folder": "检查 Request 信息",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "检查 Request 信息"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The request's User-Agent header.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132070-run"
+      }
+    },
+    "/basic-auth/{user}/{passwd}": {
+      "get": {
+        "summary": "HTTP Basic Auth",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132071-run"
+      }
+    },
+    "/bearer": {
+      "get": {
+        "summary": "Bearer Token",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132072-run"
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}": {
+      "get": {
+        "summary": "Digest Auth",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "description": "auth or auth-int",
+            "required": true,
+            "example": "test",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132073-run"
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}/{algorithm}": {
+      "get": {
+        "summary": "Digest Auth + Algorithm",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "description": "auth or auth-int",
+            "required": true,
+            "example": "test",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "algorithm",
+            "in": "path",
+            "description": "MD5, SHA-256, SHA-512",
+            "required": true,
+            "example": "MD5",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132074-run"
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}": {
+      "get": {
+        "summary": "Digest Auth + Algorithm",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "allow settings the stale_after argument.\n",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "description": "auth or auth-int",
+            "required": true,
+            "example": "test",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "algorithm",
+            "in": "path",
+            "description": "MD5, SHA-256, SHA-512",
+            "required": true,
+            "example": "MD5",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stale_after",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "test",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132075-run"
+      }
+    },
+    "/hidden-basic-auth/{user}/{passwd}": {
+      "get": {
+        "summary": "HTTP Basic Auth",
+        "x-apifox-folder": "Auth",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "admin",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unsuccessful authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132076-run"
+      }
+    },
+    "/image/jpeg": {
+      "get": {
+        "summary": "返回 JPEG 格式图片",
+        "x-apifox-folder": "图片",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "图片"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A JPEG image.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132077-run"
+      }
+    },
+    "/image/png": {
+      "get": {
+        "summary": "返回 PNG 格式图片",
+        "x-apifox-folder": "图片",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "图片"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A PNG image.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132078-run"
+      }
+    },
+    "/image/svg": {
+      "get": {
+        "summary": "返回 SVG 格式图片",
+        "x-apifox-folder": "图片",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "图片"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "An SVG image.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132079-run"
+      }
+    },
+    "/image/webp": {
+      "get": {
+        "summary": "返回 SEBP 格式图片",
+        "x-apifox-folder": "图片",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "图片"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A WEBP image.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132080-run"
+      }
+    },
+    "/image": {
+      "get": {
+        "summary": "根据 Accept header 返回对应格式图片",
+        "x-apifox-folder": "图片",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "图片"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "image/jpeg",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An image.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132081-run"
+      }
+    },
+    "/cookies": {
+      "get": {
+        "summary": "返回 cookie 数据",
+        "x-apifox-folder": "Cookies",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Cookies"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Set cookies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132082-run"
+      }
+    },
+    "/cookies/delete": {
+      "get": {
+        "summary": "Deletes cookie(s) as provided by the query string and redirects to cookie list.",
+        "x-apifox-folder": "Cookies",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Cookies"
+        ],
+        "parameters": [
+          {
+            "name": "freeform",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Redirect to cookie list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132083-run"
+      }
+    },
+    "/cookies/set": {
+      "get": {
+        "summary": "通过 Query 参数设置 Cookie",
+        "x-apifox-folder": "Cookies",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Cookies"
+        ],
+        "parameters": [
+          {
+            "name": "k1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "k2",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "v2",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Redirect to cookie list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132084-run"
+      }
+    },
+    "/cookies/set/{name}/{value}": {
+      "get": {
+        "summary": "Sets a cookie and redirects to cookie list.",
+        "x-apifox-folder": "Cookies",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Cookies"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Set cookies and redirects to cookie list.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132085-run"
+      }
+    },
+    "/absolute-redirect/{n}": {
+      "get": {
+        "summary": "Absolutely 302 Redirects n times.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132086-run"
+      }
+    },
+    "/redirect-to": {
+      "delete": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132087-run"
+      },
+      "get": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132088-run"
+      },
+      "patch": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132089-run"
+      },
+      "post": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "status_code": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132090-run"
+      },
+      "put": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "status_code": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132091-run"
+      },
+      "trace": {
+        "summary": "302/3XX Redirects to the given URL.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132092-run"
+      }
+    },
+    "/redirect/{n}": {
+      "get": {
+        "summary": "302 Redirects n times.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132093-run"
+      }
+    },
+    "/relative-redirect/{n}": {
+      "get": {
+        "summary": "Relatively 302 Redirects n times.",
+        "x-apifox-folder": "重定向",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "重定向"
+        ],
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "A redirection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3212500/apis/api-106132094-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "servers": [
+    {
+      "url": "https://echo.apifox.com",
+      "description": "正式环境"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+# See https://github.com/dnephin/pre-commit-golang for golang hooks
+repos:
+
+  - repo: local
+    hooks:
+      - id: git-branch-name
+        name: 'git-branch-name'
+        entry: scripts/pre-commit/run-git-branch-name.sh
+        language: 'script'
+        description: "Checks your git branch for style."
+
+      - id: go-fmt
+        name: 'go fmt'
+        entry: scripts/pre-commit/run-go-fmt.sh
+        files: '\.go$'
+        exclude: 'pb\.go$'
+        language: 'script'
+        description: "Runs `gofmt`, requires golang"
+
+      - id: go-imports
+        name: 'go imports'
+        entry: scripts/pre-commit/run-go-imports.sh
+        files: '\.go$'
+        exclude: 'pb\.go$'
+        language: 'script'
+        description: "Runs `goimports`, requires golang"
+
+      - id: go-vet
+        name: 'go vet'
+        entry: scripts/pre-commit/run-go-vet.sh
+        files: '\.go$'
+        language: 'script'
+        description: "Runs `go vet`, requires golang"
+
+      - id: golangci-lint
+        name: 'golangci-lint'
+        entry: scripts/pre-commit/run-golangci-lint.sh
+        language: 'script'
+        pass_filenames: false
+        description: "Runs `golangci-lint`, requires https://github.com/golangci/golangci-lint"
+
+      - id: go-mod-tidy
+        name: 'go-mod-tidy'
+        entry: scripts/pre-commit/run-go-mod-tidy.sh
+        pass_filenames: false
+        language: 'script'
+        description: "Runs `go mod tidy -v`, requires golang"
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1 # Fill in a tag / sha here (e.g. v0.19.1)
+    hooks:
+      - id: gitlint

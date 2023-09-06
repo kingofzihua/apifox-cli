@@ -1,0 +1,32 @@
+# 标题最大长度为120个字符
+[title-max-length]
+line-length=120
+
+# 标题最小长度为120个字符
+[title-min-length]
+min-length=3
+
+# 标题必须是以 feat|fix|perf|style|refactor|test|ci|docs|chore 为开头的
+[title-match-regex]
+regex=^((Merge branch.*)|((revert: )?(feat|fix|perf|style|refactor|test|ci|docs|chore)(\(.+\))?: [^A-Z].*[^.]$))
+
+# 内容最大长度为120
+[body-max-line-length]
+line-length=120
+
+[body-match-regex]
+regex=^([^\r\n]{0,80}(\r?\n|$))*$
+
+# Ignore all rules by setting ignore to 'all'
+[ignore-by-body]
+regex=(.*)release(.*)
+ignore=all
+
+[general]
+# https://jorisroovers.github.io/gitlint/configuration/general_options/#regex-style-search
+regex-style-search=True
+
+# Dependabot tends to generate lines that exceed the default 80 char limit.
+[ignore-by-author-name]
+regex=dependabot
+ignore=all
